@@ -58,13 +58,13 @@ class HashTable:
         self.__tamanho = novo
     
     def inserirElem(self, elem):
-        pos = hash(elem.valor, self.__tamanho)
-        self.__conteudo[pos] = elem
+        pos = hash(elem.chave, self.tamanho)
+        self.conteudo[pos].append(elem)
         
     def printar(self):
         for bucket in self.conteudo:
             for elemento in bucket:
-                print(self.conteudo.index(bucket), elemento)
+                print("Bucket: ", self.conteudo.index(bucket), "Chave: ", elemento.chave, "Valor: ", elemento.valor)
 
 
 
@@ -72,6 +72,6 @@ def reHash(hash: HashTable) -> HashTable:
     return hash
 
 
-hash_do_rudolf = HashTable(20)
+# hash_do_rudolf = HashTable(20)
 
-print(len(hash_do_rudolf.conteudo), hash_do_rudolf.conteudo)
+# print(len(hash_do_rudolf.conteudo), hash_do_rudolf.conteudo)
