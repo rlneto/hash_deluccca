@@ -7,3 +7,9 @@ for _ in range(100):
     minhaHash.inserirElem(Elemento(randint(0,100), str(randint(0,100))))
 
 minhaHash.printar()
+
+minhaNovaHash = reHash(minhaHash)
+
+print('\n\nMinha Nova Hash\n\n')
+
+minhaNovaHash.printar()

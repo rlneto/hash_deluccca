@@ -69,7 +69,14 @@ class HashTable:
 
 
 def reHash(hash: HashTable) -> HashTable:
-    return hash
+    elementos = []
+    for bucket in hash.conteudo:
+        for elemento in bucket:
+            elementos.append(elemento)
+    newhash = HashTable(len(elementos) * 3)
+    for elemento in elementos:
+        newhash.inserirElem(elemento)
+    return newhash
 
 
 # hash_do_rudolf = HashTable(20)
